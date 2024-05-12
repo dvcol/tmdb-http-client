@@ -1,34 +1,204 @@
 {
-  "name": "@dvcol/typescript-lib-template",
+  "name": "@dvcol/tmdb-http-client",
   "type": "module",
   "version": "1.0.0",
   "packageManager": "pnpm@9.1.0",
-  "description": "<description>",
-  "homepage": "https://github.com/dvcol/typescript-lib-template",
-  "bugs": "https://github.com/dvcol/typescript-lib-template/issues",
+  "description": "Simple fetch based http client for TMDB API",
+  "homepage": "https://github.com/dvcol/tmdb-http-client",
+  "bugs": "https://github.com/dvcol/tmdb-http-client/issues",
   "keywords": [
     "typescript",
     "library",
-    "typescript-lib-template"
+    "tmdb-http-client"
   ],
   "license": "MIT",
   "author": "dvcol",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dvcol/typescript-lib-template.git"
+    "url": "https://github.com/dvcol/tmdb-http-client.git"
   },
   "engines": {
     "node": ">=20",
     "pnpm": ">= 8"
   },
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/clients/index.cjs",
+  "module": "./dist/clients/index.js",
+  "types": "./dist/clients/index.d.ts",
   "exports": {
     ".": {
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "require": "./dist/clients/index.cjs",
+      "import": "./dist/clients/index.js",
+      "types": "./dist/clients/index.d.ts"
+    },
+    "./config": {
+      "require": "./dist/config/index.cjs",
+      "import": "./dist/config/index.js",
+      "types": "./dist/config/index.d.ts"
+    },
+    "./models": {
+      "require": "./dist/models/index.cjs",
+      "import": "./dist/models/index.js",
+      "types": "./dist/models/index.d.ts"
+    },
+    "./utils/typescript": {
+      "require": "./dist/utils/typescript.utils.cjs",
+      "import": "./dist/utils/typescript.utils.js",
+      "types": "./dist/utils/typescript.utils.d.ts"
+    },
+    "./api": {
+      "require": "./dist/api/tmdb-api.endpoints.cjs",
+      "import": "./dist/api/tmdb-api.endpoints.js",
+      "types": "./dist/api/tmdb-api.endpoints.d.ts"
+    },
+    "./api/minimal": {
+      "require": "./dist/api/tmdb-api-minimal.endpoints.cjs",
+      "import": "./dist/api/tmdb-api-minimal.endpoints.js",
+      "types": "./dist/api/tmdb-api-minimal.endpoints.d.ts"
+    },
+    "./api/v4": {
+      "require": "./dist/api/endpoints/v4/index.cjs",
+      "import": "./dist/api/endpoints/v4/index.js",
+      "types": "./dist/api/endpoints/v4/index.d.ts"
+    },
+    "./api/v4/account": {
+      "require": "./dist/api/endpoints/v4/account.endpoint.cjs",
+      "import": "./dist/api/endpoints/v4/account.endpoint.js",
+      "types": "./dist/api/endpoints/v4/account.endpoint.d.ts"
+    },
+    "./api/v4/auth": {
+      "require": "./dist/api/endpoints/v4/auth.endpoint.cjs",
+      "import": "./dist/api/endpoints/v4/auth.endpoint.js",
+      "types": "./dist/api/endpoints/v4/auth.endpoint.d.ts"
+    },
+    "./api/v4/lists": {
+      "require": "./dist/api/endpoints/v4/lists.endpoint.cjs",
+      "import": "./dist/api/endpoints/v4/lists.endpoint.js",
+      "types": "./dist/api/endpoints/v4/lists.endpoint.d.ts"
+    },
+    "./api/v3": {
+      "require": "./dist/api/endpoints/v3/index.cjs",
+      "import": "./dist/api/endpoints/v3/index.js",
+      "types": "./dist/api/endpoints/v3/index.d.ts"
+    },
+    "./api/v3/account": {
+      "require": "./dist/api/endpoints/v3/account.endpoint.cjs",
+      "import": "./dist/api/endpoints/v3/account.endpoint.js",
+      "types": "./dist/api/endpoints/v3/account.endpoint.d.ts"
+    },
+    "./api/v3/authentication": {
+      "require": "./dist/api/endpoints/v3/authentication.endpoint.cjs",
+      "import": "./dist/api/endpoints/v3/authentication.endpoint.js",
+      "types": "./dist/api/endpoints/v3/authentication.endpoint.d.ts"
+    },
+    "./api/v3/certifications": {
+      "require": "./dist/api/endpoints/v3/certifications.endpoint.cjs",
+      "import": "./dist/api/endpoints/v3/certifications.endpoint.js",
+      "types": "./dist/api/endpoints/v3/certifications.endpoint.d.ts"
+    },
+    "./api/v3/changes": {
+      "require": "./dist/api/endpoints/v3/changes.endpoint.cjs",
+      "import": "./dist/api/endpoints/v3/changes.endpoint.js",
+      "types": "./dist/api/endpoints/v3/changes.endpoint.d.ts"
+    },
+    "./api/v3/collections": {
+      "require": "./dist/api/endpoints/v3/collections.endpoint.cjs",
+      "import": "./dist/api/endpoints/v3/collections.endpoint.js",
+      "types": "./dist/api/endpoints/v3/collections.endpoint.d.ts"
+    },
+    "./api/v3/companies": {
+      "require": "./dist/api/endpoints/v3/companies.endpoint.cjs",
+      "import": "./dist/api/endpoints/v3/companies.endpoint.js",
+      "types": "./dist/api/endpoints/v3/companies.endpoint.d.ts"
+    },
+    "./api/v3/configuration": {
+      "require": "./dist/api/endpoints/v3/configuration.endpoint.cjs",
+      "import": "./dist/api/endpoints/v3/configuration.endpoint.js",
+      "types": "./dist/api/endpoints/v3/configuration.endpoint.d.ts"
+    },
+    "./api/v3/credits": {
+      "require": "./dist/api/endpoints/v3/credits.endpoint.cjs",
+      "import": "./dist/api/endpoints/v3/credits.endpoint.js",
+      "types": "./dist/api/endpoints/v3/credits.endpoint.d.ts"
+    },
+    "./api/v3/discover": {
+      "require": "./dist/api/endpoints/v3/discover.endpoint.cjs",
+      "import": "./dist/api/endpoints/v3/discover.endpoint.js",
+      "types": "./dist/api/endpoints/v3/discover.endpoint.d.ts"
+    },
+    "./api/v3/episodes": {
+      "require": "./dist/api/endpoints/v3/episodes.endpoint.cjs",
+      "import": "./dist/api/endpoints/v3/episodes.endpoint.js",
+      "types": "./dist/api/endpoints/v3/episodes.endpoint.d.ts"
+    },
+    "./api/v3/find": {
+      "require": "./dist/api/endpoints/v3/find.endpoint.cjs",
+      "import": "./dist/api/endpoints/v3/find.endpoint.js",
+      "types": "./dist/api/endpoints/v3/find.endpoint.d.ts"
+    },
+    "./api/v3/genres": {
+      "require": "./dist/api/endpoints/v3/genres.endpoint.cjs",
+      "import": "./dist/api/endpoints/v3/genres.endpoint.js",
+      "types": "./dist/api/endpoints/v3/genres.endpoint.d.ts"
+    },
+    "./api/v3/guest": {
+      "require": "./dist/api/endpoints/v3/guest.endpoint.cjs",
+      "import": "./dist/api/endpoints/v3/guest.endpoint.js",
+      "types": "./dist/api/endpoints/v3/guest.endpoint.d.ts"
+    },
+    "./api/v3/keywords": {
+      "require": "./dist/api/endpoints/v3/keywords.endpoint.cjs",
+      "import": "./dist/api/endpoints/v3/keywords.endpoint.js",
+      "types": "./dist/api/endpoints/v3/keywords.endpoint.d.ts"
+    },
+    "./api/v3/lists": {
+      "require": "./dist/api/endpoints/v3/lists.endpoint.cjs",
+      "import": "./dist/api/endpoints/v3/lists.endpoint.js",
+      "types": "./dist/api/endpoints/v3/lists.endpoint.d.ts"
+    },
+    "./api/v3/movies": {
+      "require": "./dist/api/endpoints/v3/movies.endpoint.cjs",
+      "import": "./dist/api/endpoints/v3/movies.endpoint.js",
+      "types": "./dist/api/endpoints/v3/movies.endpoint.d.ts"
+    },
+    "./api/v3/networks": {
+      "require": "./dist/api/endpoints/v3/networks.endpoint.cjs",
+      "import": "./dist/api/endpoints/v3/networks.endpoint.js",
+      "types": "./dist/api/endpoints/v3/networks.endpoint.d.ts"
+    },
+    "./api/v3/people": {
+      "require": "./dist/api/endpoints/v3/people.endpoint.cjs",
+      "import": "./dist/api/endpoints/v3/people.endpoint.js",
+      "types": "./dist/api/endpoints/v3/people.endpoint.d.ts"
+    },
+    "./api/v3/providers": {
+      "require": "./dist/api/endpoints/v3/providers.endpoint.cjs",
+      "import": "./dist/api/endpoints/v3/providers.endpoint.js",
+      "types": "./dist/api/endpoints/v3/providers.endpoint.d.ts"
+    },
+    "./api/v3/reviews": {
+      "require": "./dist/api/endpoints/v3/reviews.endpoint.cjs",
+      "import": "./dist/api/endpoints/v3/reviews.endpoint.js",
+      "types": "./dist/api/endpoints/v3/reviews.endpoint.d.ts"
+    },
+    "./api/v3/search": {
+      "require": "./dist/api/endpoints/v3/search.endpoint.cjs",
+      "import": "./dist/api/endpoints/v3/search.endpoint.js",
+      "types": "./dist/api/endpoints/v3/search.endpoint.d.ts"
+    },
+    "./api/v3/seasons": {
+      "require": "./dist/api/endpoints/v3/seasons.endpoint.cjs",
+      "import": "./dist/api/endpoints/v3/seasons.endpoint.js",
+      "types": "./dist/api/endpoints/v3/seasons.endpoint.d.ts"
+    },
+    "./api/v3/shows": {
+      "require": "./dist/api/endpoints/v3/shows.endpoint.cjs",
+      "import": "./dist/api/endpoints/v3/shows.endpoint.js",
+      "types": "./dist/api/endpoints/v3/shows.endpoint.d.ts"
+    },
+    "./api/v3/trending": {
+      "require": "./dist/api/endpoints/v3/trending.endpoint.cjs",
+      "import": "./dist/api/endpoints/v3/trending.endpoint.js",
+      "types": "./dist/api/endpoints/v3/trending.endpoint.d.ts"
     }
   },
   "files": [
@@ -51,7 +221,9 @@
     "access": "public"
   },
   "peerDependencies": {},
-  "dependencies": {},
+  "dependencies": {
+    "@dvcol/base-http-client": "^1.1.2"
+  },
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
