@@ -17,7 +17,7 @@ import { networks } from '~/api/endpoints/v3/networks.endpoint';
 import { people } from '~/api/endpoints/v3/people.endpoint';
 import { reviews } from '~/api/endpoints/v3/reviews.endpoint';
 import { search } from '~/api/endpoints/v3/search.endpoint';
-import { seasons } from '~/api/endpoints/v3/sesons.endpoint';
+import { seasons } from '~/api/endpoints/v3/seasons.endpoint';
 import { shows } from '~/api/endpoints/v3/shows.endpoint';
 import { trending } from '~/api/endpoints/v3/trending.endpoint';
 
