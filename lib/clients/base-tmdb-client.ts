@@ -93,7 +93,11 @@ export class BaseTmdbClient extends BaseClient<TmdbApiQuery, TmdbApiResponse, Tm
     };
 
     if (template.opts?.auth && this.auth.accessToken) {
-      headers[BaseApiHeaders.Authorization] = `Bearer ${this.auth.accessToken}`;
+      if (this.auth.expiresAt && Date.parse(this.auth.expiresAt) > Date.now()) {
+        headers[BaseApiHeaders.Authorization] = `Bearer ${this.auth.accessToken}`;
+      } else {
+        throw Error('User auth required: access_token has expired');
+      }
     } else if (template.opts?.auth === 'token' && !this.auth.accessToken) {
       throw Error('User auth required: access_token is missing');
     } else if (template.opts?.auth === 'session' && !this.auth.sessionId) {
@@ -123,8 +127,8 @@ export class BaseTmdbClient extends BaseClient<TmdbApiQuery, TmdbApiResponse, Tm
    */
   protected _parseUrl<T extends TmdbApiParam = TmdbApiParam>(template: TmdbApiTemplate<T>, params: T): URL {
     if (template.opts?.version && !template.url.startsWith(`/${template.opts.version}`)) template.url = `/${template.opts.version}${template.url}`;
-    injectCorsProxyPrefix(template, this.settings);
-    const _url = parseUrl<T>(template, params, this.settings.endpoint);
+    const _template = injectCorsProxyPrefix(template, this.settings);
+    const _url = parseUrl<T>(_template, params, this.settings.endpoint);
     if (this.auth.sessionId) _url.searchParams.set('session_id', this.auth.sessionId);
     if (this.settings.apiKey && !this.auth.accessToken && !this.settings.readToken) {
       _url.searchParams.set('api_key', this.settings.apiKey);
@@ -166,6 +170,6 @@ export class BaseTmdbClient extends BaseClient<TmdbApiQuery, TmdbApiResponse, Tm
       const result = await _json.bind(parsed)();
       return parseResponse(result);
     };
-    return response;
+    return parsed;
   }
 }
