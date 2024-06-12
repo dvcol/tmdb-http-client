@@ -93,7 +93,7 @@ export class BaseTmdbClient extends BaseClient<TmdbApiQuery, TmdbApiResponse, Tm
     };
 
     if (template.opts?.auth && this.auth.accessToken) {
-      if (this.auth.expiresAt && Date.parse(this.auth.expiresAt) > Date.now()) {
+      if (this.auth.expiresAt === undefined || Date.parse(this.auth.expiresAt) > Date.now()) {
         headers[BaseApiHeaders.Authorization] = `Bearer ${this.auth.accessToken}`;
       } else {
         throw Error('User auth required: access_token has expired');

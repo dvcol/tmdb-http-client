@@ -9,6 +9,7 @@ import type {
   BaseTemplateOptions,
   ResponseOrTypedResponse,
 } from '@dvcol/base-http-client';
+import type { CancellablePromise } from '@dvcol/base-http-client/utils/fetch';
 
 import type { RecursiveRecord } from '~/utils/typescript.utils';
 
@@ -79,7 +80,7 @@ export type TmdbApiTemplateOptions<T extends string | number | symbol = string> 
 export type TmdbApiTemplate<Parameter extends TmdbApiParam = TmdbApiParam> = BaseTemplate<Parameter, TmdbApiTemplateOptions<keyof Parameter>>;
 
 export interface TmdbClientEndpoint<Parameter extends TmdbApiParam = Record<string, never>, Response = unknown> {
-  (param?: Parameter, init?: BodyInit): Promise<TmdbApiResponse<Response>>;
+  (param?: Parameter, init?: BodyInit): CancellablePromise<TmdbApiResponse<Response>>;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unsafe-declaration-merging
