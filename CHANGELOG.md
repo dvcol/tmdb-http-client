@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.2](https://github.com/dvcol/tmdb-http-client/compare/v1.1.1...v1.1.2) (2024-06-12)
+
+
+### Bug Fixes
+
+* **auth:** adds expiration check and fix parsed response ([3c0dcbf](https://github.com/dvcol/tmdb-http-client/commit/3c0dcbf9e6fbdbbd38630fb2ab35f09bd3d2479c))
+* **cache:** support cancellable promises ([a53d653](https://github.com/dvcol/tmdb-http-client/commit/a53d65320cda00cec38272367e90c0af8aa75c76))
+
 ### [1.1.1](https://github.com/dvcol/tmdb-http-client/compare/v1.1.0...v1.1.1) (2024-05-12)
 
 
