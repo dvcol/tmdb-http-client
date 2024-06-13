@@ -1,4 +1,4 @@
-import { HttpMethod } from '@dvcol/base-http-client/utils/http';
+import { HttpMethod } from '@dvcol/common-utils/http';
 
 import type { TmdbEpisodeRating } from '~/models/tmdb-episode.model';
 import type { TmdbMovieGuestRating } from '~/models/tmdb-movie.model';

@@ -1,5 +1,5 @@
 import { BaseApiHeaders, BaseHeaderContentType } from '@dvcol/base-http-client';
-import { HttpMethod } from '@dvcol/base-http-client/utils/http';
+import { HttpMethod } from '@dvcol/common-utils/http';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import { BaseTmdbClient, parsePageResponse, parseResponse } from './base-tmdb-client';

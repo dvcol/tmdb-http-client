@@ -1,4 +1,4 @@
-import { HttpMethod } from '@dvcol/base-http-client/utils/http';
+import { HttpMethod } from '@dvcol/common-utils/http';
 
 import type { TmdbChanges } from '~/models/tmdb-change.model';
 import type { TmdbCombinedCredit, TmdbPersonMovieCredits, TmdbPersonShowCredits } from '~/models/tmdb-credit.model';

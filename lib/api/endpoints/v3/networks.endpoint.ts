@@ -1,4 +1,4 @@
-import { HttpMethod } from '@dvcol/base-http-client/utils/http';
+import { HttpMethod } from '@dvcol/common-utils/http';
 
 import type { TmdbAlternativeNames, TmdbNetwork } from '~/models/tmdb-entity.model';
 import type { TmdbImages } from '~/models/tmdb-image.model';
