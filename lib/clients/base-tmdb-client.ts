@@ -1,12 +1,4 @@
-import {
-  BaseApiHeaders,
-  type BaseBody,
-  BaseClient,
-  BaseHeaderContentType,
-  injectCorsProxyPrefix,
-  parseBody,
-  parseUrl,
-} from '@dvcol/base-http-client';
+import { BaseApiHeaders, BaseClient, BaseHeaderContentType, injectCorsProxyPrefix, parseUrl } from '@dvcol/base-http-client';
 
 import type { TmdbApi } from '~/api/tmdb-api.endpoints';
 import type {
@@ -134,23 +126,6 @@ export class BaseTmdbClient extends BaseClient<TmdbApiQuery, TmdbApiResponse, Tm
       _url.searchParams.set('api_key', this.settings.apiKey);
     }
     return _url;
-  }
-
-  /**
-   * Parses body from a template and stringifies a {@link BodyInit}
-   *
-   * @protected
-   *
-   * @template T - The type of the parameters.
-   *
-   * @param template - The expected body structure.
-   * @param {T} params - The actual parameters.
-   *
-   * @returns {BodyInit} The parsed request body.
-   */
-  // eslint-disable-next-line class-methods-use-this -- implemented from abstract class
-  protected _parseBody<T extends TmdbApiParam = TmdbApiParam>(template: BaseBody<string | keyof T>, params: T): BodyInit {
-    return parseBody(template, params);
   }
 
   /**
