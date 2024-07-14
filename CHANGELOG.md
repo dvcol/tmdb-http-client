@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.3](https://github.com/dvcol/tmdb-http-client/compare/v1.2.2...v1.2.3) (2024-07-14)
+
+
+### Bug Fixes
+
+* **parse:** parse cloned responses too to fix caching ([5bca33d](https://github.com/dvcol/tmdb-http-client/commit/5bca33ddfe43a61a50cad9f67ca6ee27115ccc60))
+
 ### [1.2.2](https://github.com/dvcol/tmdb-http-client/compare/v1.2.1...v1.2.2) (2024-07-14)
 
 
