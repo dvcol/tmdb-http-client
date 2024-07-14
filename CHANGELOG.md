@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/dvcol/tmdb-http-client/compare/v1.1.4...v1.2.0) (2024-07-14)
+
+
+### Features
+
+* **discover:** improve query typing & input coercing ([faeb81b](https://github.com/dvcol/tmdb-http-client/commit/faeb81bda3dabc18b55e670eb7555d26d9531572))
+
 ### [1.1.4](https://github.com/dvcol/tmdb-http-client/compare/v1.1.3...v1.1.4) (2024-06-23)
 
 ### [1.1.3](https://github.com/dvcol/tmdb-http-client/compare/v1.1.2...v1.1.3) (2024-06-13)
