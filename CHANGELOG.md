@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.1](https://github.com/dvcol/tmdb-http-client/compare/v1.2.0...v1.2.1) (2024-07-14)
+
+
+### Bug Fixes
+
+* **movie:** rationalise TmdbMovieReleaseType constants ([285971b](https://github.com/dvcol/tmdb-http-client/commit/285971bc6475a5153fb32e42f71da6f991ab8048))
+
 ## [1.2.0](https://github.com/dvcol/tmdb-http-client/compare/v1.1.4...v1.2.0) (2024-07-14)
 
 
