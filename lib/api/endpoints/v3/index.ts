@@ -10,11 +10,13 @@ import { discover } from '~/api/endpoints/v3/discover.endpoint';
 import { episodes } from '~/api/endpoints/v3/episodes.endpoint';
 import { find } from '~/api/endpoints/v3/find.endpoint';
 import { genres } from '~/api/endpoints/v3/genres.endpoint';
+import { guest } from '~/api/endpoints/v3/guest.endpoint';
 import { keywords } from '~/api/endpoints/v3/keywords.endpoint';
 import { list } from '~/api/endpoints/v3/lists.endpoint';
 import { movies } from '~/api/endpoints/v3/movies.endpoint';
 import { networks } from '~/api/endpoints/v3/networks.endpoint';
 import { people } from '~/api/endpoints/v3/people.endpoint';
+import { providers } from '~/api/endpoints/v3/providers.endpoint';
 import { reviews } from '~/api/endpoints/v3/reviews.endpoint';
 import { search } from '~/api/endpoints/v3/search.endpoint';
 import { seasons } from '~/api/endpoints/v3/seasons.endpoint';
@@ -31,17 +33,19 @@ export const v3 = {
   configuration,
   credits,
   discover,
+  episodes,
   find,
   genres,
+  guest,
   keywords,
   list,
   movies,
   networks,
   people,
+  providers,
   reviews,
   search,
-  trending,
-  shows,
   seasons,
-  episodes,
+  shows,
+  trending,
 };
