@@ -31,6 +31,29 @@ export type TmdbShowShort = {
   vote_count: number;
 };
 
+export const TmdbShowStatus = {
+  ReturningSeries: 'Returning Series',
+  Planned: 'Planned',
+  InProduction: 'In Production',
+  Ended: 'Ended',
+  Cancelled: 'Cancelled',
+  Pilot: 'Pilot',
+} as const;
+
+export type TmdbShowStatuses = (typeof TmdbShowStatus)[keyof typeof TmdbShowStatus];
+
+export const TmdbShowType = {
+  Documentary: 'Documentary',
+  News: 'News',
+  Miniseries: 'Miniseries',
+  Reality: 'Reality',
+  Scripted: 'Scripted',
+  TalkShow: 'Talk Show',
+  Video: 'Video',
+} as const;
+
+export type TmdbShowTypes = (typeof TmdbShowType)[keyof typeof TmdbShowType];
+
 export type TmdbShowExtended = TmdbShowShort & {
   created_by: TmdbPersonShow[];
   episode_run_time: number[];
@@ -48,9 +71,9 @@ export type TmdbShowExtended = TmdbShowShort & {
   production_countries: TmdbCountry[];
   seasons: TmdbSeason[];
   spoken_languages: TmdbLanguage[];
-  status: string;
+  status: string | TmdbShowStatuses;
   tagline: string;
-  type: string;
+  type: string | TmdbShowTypes;
 };
 
 export type TmdbShow<T extends EntityTypes = Short> = T extends Extended

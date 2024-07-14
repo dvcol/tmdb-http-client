@@ -71,13 +71,15 @@ export type TmdbMovieImages = {
 };
 
 export const TmdbMovieReleaseType = {
-  1: 'Premiere',
-  2: 'Theatrical (limited)',
-  3: 'Theatrical',
-  4: 'Digital',
-  5: 'Physical',
-  6: 'TV',
+  Premiere: 1,
+  'Theatrical (limited)': 2,
+  Theatrical: 3,
+  Digital: 4,
+  Physical: 5,
+  TV: 6,
 } as const;
+
+export type TmdbMovieReleaseTypes = (typeof TmdbMovieReleaseType)[keyof typeof TmdbMovieReleaseType];
 
 export type TmdbMovieReleaseDate = {
   certification: string;
@@ -87,5 +89,5 @@ export type TmdbMovieReleaseDate = {
   note?: string;
   /** Timestamp in ISO 8601 GMT format (YYYY-MM-DDThh:mm:ss.sssZ) */
   release_date: string;
-  type: keyof typeof TmdbMovieReleaseType;
+  type: TmdbMovieReleaseTypes;
 };

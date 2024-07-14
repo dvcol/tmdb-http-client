@@ -22,8 +22,8 @@ importers:
         specifier: ^19.2.2
         version: 19.2.2
       '@dvcol/eslint-plugin-presets':
-        specifier: ^1.3.10
-        version: 1.3.10(vmkrzdwpp5nmxvlx24l5lnx7re)
+        specifier: ^1.3.11
+        version: 1.3.11(vmkrzdwpp5nmxvlx24l5lnx7re)
       '@typescript-eslint/eslint-plugin':
         specifier: ^7.0.0
         version: 7.13.1(@typescript-eslint/parser@7.13.1(eslint@8.57.0)(typescript@5.5.2))(eslint@8.57.0)(typescript@5.5.2)
@@ -202,8 +202,8 @@ packages:
     resolution: {integrity: sha512-7fDxYpYlEfLuwMoDv1/RW33k4aa7CYmJ/TgfW9qgNrgPH9qYoQ8zj9zWyhiQ9Ra6LC3kjRpUXSVgbgzN+isIdA==}
     engines: {node: '>=20', pnpm: '>= 8'}
 
-  '@dvcol/eslint-plugin-presets@1.3.10':
-    resolution: {integrity: sha512-sZ0ixVySVGP17TZqLceh4ojxzhGNZzM+MrYq4qzyC/1KLrvuEPc8rMJkJbM/QREtAjq812MhIVTh26Kfh8hu9g==}
+  '@dvcol/eslint-plugin-presets@1.3.11':
+    resolution: {integrity: sha512-kZ926sQcW65hy8NCt9A5CJSdFMH4Rj1IePby5sAJ/5OzqDKx8/Zhpns+So2xDpR9fghuSQwhG0h5zYY86x5WNg==}
     engines: {node: ' >=14.13.1 || >=16', yarn: '>= 3.2.0'}
     peerDependencies:
       '@typescript-eslint/eslint-plugin': '>= 5'
@@ -224,9 +224,9 @@ packages:
       eslint-plugin-prettier: '>= 4'
       eslint-plugin-react: ^7.32.2
       eslint-plugin-react-hooks: ^4.6.0
-      eslint-plugin-solid: ^0.13.0
+      eslint-plugin-solid: ^0.14.0
       eslint-plugin-svelte: '>= 2'
-      eslint-plugin-vitest: ^0.2.6
+      eslint-plugin-vitest: ^0.5.0
       eslint-plugin-vue: '>= 9'
       eslint-plugin-vuejs-accessibility: ^2.1.0
       eslint-plugin-yml: ^1.5.0
@@ -3153,7 +3153,7 @@ snapshots:
 
   '@dvcol/common-utils@1.2.2': {}
 
-  '@dvcol/eslint-plugin-presets@1.3.10(vmkrzdwpp5nmxvlx24l5lnx7re)':
+  '@dvcol/eslint-plugin-presets@1.3.11(vmkrzdwpp5nmxvlx24l5lnx7re)':
     dependencies:
       chalk: 4.1.2
       dash-ast: 2.0.1

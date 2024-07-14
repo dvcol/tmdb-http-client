@@ -117,6 +117,36 @@ export const discover = {
         },
       },
     },
+    transform: params => {
+      if (params.with_cast && Array.isArray(params.with_cast)) {
+        params.with_cast = params.with_cast.join('|');
+      }
+      if (params.with_companies && Array.isArray(params.with_companies)) {
+        params.with_companies = params.with_companies.join('|');
+      }
+      if (params.with_crew && Array.isArray(params.with_crew)) {
+        params.with_crew = params.with_crew.join('|');
+      }
+      if (params.with_genres && Array.isArray(params.with_genres)) {
+        params.with_genres = params.with_genres.join('|');
+      }
+      if (params.with_keywords && Array.isArray(params.with_keywords)) {
+        params.with_keywords = params.with_keywords.join('|');
+      }
+      if (params.with_people && Array.isArray(params.with_people)) {
+        params.with_people = params.with_people.join('|');
+      }
+      if (params.with_release_type && Array.isArray(params.with_release_type)) {
+        params.with_release_type = params.with_release_type.join('|');
+      }
+      if (params.with_watch_monetization_types && Array.isArray(params.with_watch_monetization_types)) {
+        params.with_watch_monetization_types = params.with_watch_monetization_types.join('|');
+      }
+      if (params.with_watch_providers && Array.isArray(params.with_watch_providers)) {
+        params.with_watch_providers = params.with_watch_providers.join('|');
+      }
+      return params;
+    },
   }),
 
   /**
@@ -215,6 +245,30 @@ export const discover = {
           page: false,
         },
       },
+    },
+    transform: params => {
+      if (params.with_companies && Array.isArray(params.with_companies)) {
+        params.with_companies = params.with_companies.join('|');
+      }
+      if (params.with_genres && Array.isArray(params.with_genres)) {
+        params.with_genres = params.with_genres.join('|');
+      }
+      if (params.with_keywords && Array.isArray(params.with_keywords)) {
+        params.with_keywords = params.with_keywords.join('|');
+      }
+      if (params.with_status && Array.isArray(params.with_status)) {
+        params.with_status = params.with_status.join('|');
+      }
+      if (params.with_watch_monetization_types && Array.isArray(params.with_watch_monetization_types)) {
+        params.with_watch_monetization_types = params.with_watch_monetization_types.join('|');
+      }
+      if (params.with_watch_providers && Array.isArray(params.with_watch_providers)) {
+        params.with_watch_providers = params.with_watch_providers.join('|');
+      }
+      if (params.with_type && Array.isArray(params.with_type)) {
+        params.with_type = params.with_type.join('|');
+      }
+      return params;
     },
   }),
 };
