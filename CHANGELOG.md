@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.2](https://github.com/dvcol/tmdb-http-client/compare/v1.2.1...v1.2.2) (2024-07-14)
+
+
+### Bug Fixes
+
+* **api:** adds missing endpoints to the v3 api signature ([f734a92](https://github.com/dvcol/tmdb-http-client/commit/f734a9224a18c4f54716609d6925cd701417f1ac))
+
 ### [1.2.1](https://github.com/dvcol/tmdb-http-client/compare/v1.2.0...v1.2.1) (2024-07-14)
 
 
