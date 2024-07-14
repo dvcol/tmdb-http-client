@@ -72,7 +72,7 @@ export type TmdbMovieImages = {
 
 export const TmdbMovieReleaseType = {
   Premiere: 1,
-  'Theatrical (limited)': 2,
+  TheatricalLimited: 2,
   Theatrical: 3,
   Digital: 4,
   Physical: 5,
