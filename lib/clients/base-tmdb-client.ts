@@ -49,6 +49,13 @@ export const parseResponse = (response: TmdbApiResponseData | TmdbApiResponsePag
   return _result;
 };
 
+const patchResponse = <T extends Response>(response: T): T => {
+  const parsed: T = response;
+  const _json = parsed.json as T['json'];
+  parsed.json = async () => _json.bind(parsed)().then(parseResponse);
+  return parsed;
+};
+
 /**
  * Represents a Tmdb API client with common functionality.
  *
@@ -139,12 +146,9 @@ export class BaseTmdbClient extends BaseClient<TmdbApiQuery, TmdbApiResponse, Tm
   protected _parseResponse(response: TmdbApiResponse<TmdbApiResponseData | TmdbApiResponsePageData>): TmdbApiResponse {
     if (!response.ok || response.status >= 400) throw response;
 
-    const parsed: TmdbApiResponse = response;
-    const _json = parsed.json as TmdbApiResponse<TmdbApiResponseData>['json'];
-    parsed.json = async () => {
-      const result = await _json.bind(parsed)();
-      return parseResponse(result);
-    };
+    const parsed: TmdbApiResponse = patchResponse(response);
+    const _clone = parsed.clone;
+    parsed.clone = () => patchResponse(_clone.bind(parsed)());
     return parsed;
   }
 }
