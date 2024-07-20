@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/dvcol/tmdb-http-client/compare/v1.2.3...v1.3.0) (2024-07-20)
+
+
+### Features
+
+* **doc:** improve readme documentation ([4ee777b](https://github.com/dvcol/tmdb-http-client/commit/4ee777b9ed42ddd8e06d9b08df40dd31e7760787))
+
 ### [1.2.3](https://github.com/dvcol/tmdb-http-client/compare/v1.2.2...v1.2.3) (2024-07-14)
 
 
