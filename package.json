@@ -3,7 +3,7 @@
   "type": "module",
   "version": "1.2.3",
   "packageManager": "pnpm@9.1.0",
-  "description": "Simple fetch based http client for TMDB API",
+  "description": "Simple fetch based http client for TMDB API with full typescript support (request and response).",
   "homepage": "https://github.com/dvcol/tmdb-http-client",
   "bugs": "https://github.com/dvcol/tmdb-http-client/issues",
   "keywords": [
