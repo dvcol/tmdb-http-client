@@ -1,4 +1,4 @@
-<h1 align="center">@dvcol/trakt-http-client</h1>
+<h1 align="center">@dvcol/tmdb-http-client</h1>
 <p>
   <img src="https://img.shields.io/badge/pnpm-%3E%3D9.0.0-blue.svg" />
   <img src="https://img.shields.io/badge/node-%3E%3D20.0.0-blue.svg" />
@@ -86,4 +86,4 @@ See [Tmdb API documentation](https://developer.themoviedb.org/reference/intro/ge
 
 ## 📝 License
 
-This project is [MIT](https://github.com/dvcol/trakt-http-client/blob/master/LICENSE) licensed.
+This project is [MIT](https://github.com/dvcol/tmdb-http-client/blob/master/LICENSE) licensed.
