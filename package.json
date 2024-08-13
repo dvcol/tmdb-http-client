@@ -222,7 +222,7 @@
   },
   "peerDependencies": {},
   "dependencies": {
-    "@dvcol/base-http-client": "^1.12.1",
+    "@dvcol/base-http-client": "^1.12.2",
     "@dvcol/common-utils": "^1.2.2"
   },
   "devDependencies": {
