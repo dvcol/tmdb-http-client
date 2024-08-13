@@ -222,7 +222,7 @@
   },
   "peerDependencies": {},
   "dependencies": {
-    "@dvcol/base-http-client": "^1.10.0",
+    "@dvcol/base-http-client": "^1.12.1",
     "@dvcol/common-utils": "^1.2.2"
   },
   "devDependencies": {
@@ -231,7 +231,7 @@
     "@dvcol/eslint-plugin-presets": "^1.3.11",
     "@typescript-eslint/eslint-plugin": "^7.0.0",
     "@typescript-eslint/parser": "^7.0.0",
-    "@vitest/coverage-v8": "^1.6.0",
+    "@vitest/coverage-v8": "^2.0.5",
     "eslint": "^8.57.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^9.1.0",
@@ -250,7 +250,7 @@
     "standard-version": "^9.5.0",
     "tsup": "^8.0.2",
     "typescript": "^5.4.5",
-    "vitest": "^1.6.0"
+    "vitest": "^2.0.5"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,vue,svelte,json,md}": [

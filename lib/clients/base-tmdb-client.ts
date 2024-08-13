@@ -1,4 +1,6 @@
-import { BaseApiHeaders, BaseClient, BaseHeaderContentType, injectCorsProxyPrefix, parseUrl } from '@dvcol/base-http-client';
+import { BaseClient } from '@dvcol/base-http-client';
+import { patchResponse, injectCorsProxyPrefix, parseUrl, injectUrlPrefix } from '@dvcol/base-http-client/utils/client';
+import { BaseApiHeaders, BaseHeaderContentType } from '@dvcol/base-http-client/utils/http';
 
 import type { TmdbApi } from '~/api/tmdb-api.endpoints';
 import type {
@@ -49,12 +51,7 @@ export const parseResponse = (response: TmdbApiResponseData | TmdbApiResponsePag
   return _result;
 };
 
-const patchResponse = <T extends Response>(response: T): T => {
-  const parsed: T = response;
-  const _json = parsed.json as T['json'];
-  parsed.json = async () => _json.bind(parsed)().then(parseResponse);
-  return parsed;
-};
+const patchTmdbResponse = <T extends Response>(response: T): T => patchResponse(response, parseResponse);
 
 /**
  * Represents a Tmdb API client with common functionality.
@@ -125,8 +122,8 @@ export class BaseTmdbClient extends BaseClient<TmdbApiQuery, TmdbApiResponse, Tm
    * @throws {Error} Throws an error if mandatory parameters are missing or if a filter is not supported.
    */
   protected _parseUrl<T extends TmdbApiParam = TmdbApiParam>(template: TmdbApiTemplate<T>, params: T): URL {
-    if (template.opts?.version && !template.url.startsWith(`/${template.opts.version}`)) template.url = `/${template.opts.version}${template.url}`;
-    const _template = injectCorsProxyPrefix(template, this.settings);
+    const versionedTemplate = injectUrlPrefix(`/${template.opts.version}`, template);
+    const _template = injectCorsProxyPrefix(versionedTemplate, this.settings);
     const _url = parseUrl<T>(_template, params, this.settings.endpoint);
     if (this.auth.sessionId) _url.searchParams.set('session_id', this.auth.sessionId);
     if (this.settings.apiKey && !this.auth.accessToken && !this.settings.readToken) {
@@ -146,9 +143,9 @@ export class BaseTmdbClient extends BaseClient<TmdbApiQuery, TmdbApiResponse, Tm
   protected _parseResponse(response: TmdbApiResponse<TmdbApiResponseData | TmdbApiResponsePageData>): TmdbApiResponse {
     if (!response.ok || response.status >= 400) throw response;
 
-    const parsed: TmdbApiResponse = patchResponse(response);
+    const parsed: TmdbApiResponse = patchTmdbResponse(response);
     const _clone = parsed.clone;
-    parsed.clone = () => patchResponse(_clone.bind(parsed)());
+    parsed.clone = () => patchTmdbResponse(_clone.bind(parsed)());
     return parsed;
   }
 }

@@ -1,7 +1,6 @@
 import { BaseApiHeaders, BaseHeaderContentType } from '@dvcol/base-http-client';
 import { hasOwnProperty } from '@dvcol/base-http-client/utils/test';
 import { HttpMethod } from '@dvcol/common-utils/http';
-import { CancellableFetch } from '@dvcol/common-utils/http/fetch';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { Config } from '../config';
@@ -26,7 +25,7 @@ describe('tmdb-client.ts', () => {
     ...data,
   };
 
-  const fetch = vi.spyOn(CancellableFetch, 'fetch');
+  const fetch = vi.spyOn(global, 'fetch');
 
   const mockAuth: TmdbClientAuthentication = {
     accessToken: 'access_token',
@@ -42,6 +41,7 @@ describe('tmdb-client.ts', () => {
       [BaseApiHeaders.Accept]: BaseHeaderContentType.Json,
     },
     method: HttpMethod.GET,
+    signal: expect.any(AbortSignal),
   };
 
   const mockNow = 100;
@@ -75,7 +75,6 @@ describe('tmdb-client.ts', () => {
 
     it('should query popular movies endpoint', async () => {
       expect.assertions(1);
-
       const res = await tmdbClient.v3.movies.popular();
 
       await expect(res.json()).resolves.toStrictEqual(data);
