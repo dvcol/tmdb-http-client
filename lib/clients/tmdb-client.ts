@@ -42,7 +42,7 @@ export class TmdbClient extends BaseTmdbClient {
       request_token,
       expires: Date.now() + this.settings.requestTokenTTL,
       redirect_to,
-      redirect_approve: `${Config.requestTokenUrl}${request_token}`,
+      redirect_approve: `${Config.RequestTokenUrl}${request_token}`,
     };
   }
 

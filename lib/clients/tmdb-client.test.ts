@@ -115,7 +115,7 @@ describe('tmdb-client.ts', () => {
       expect(res).toMatchObject({
         request_token: 'request_token',
         expires: mockNow + tmdbClientSettings.requestTokenTTL,
-        redirect_approve: `${Config.requestTokenUrl}request_token`,
+        redirect_approve: `${Config.RequestTokenUrl}request_token`,
       });
     });
 
@@ -136,7 +136,7 @@ describe('tmdb-client.ts', () => {
         request_token: 'request_token',
         expires: mockNow + tmdbClientSettings.requestTokenTTL,
         redirect_to: 'redirect_to',
-        redirect_approve: `${Config.requestTokenUrl}request_token`,
+        redirect_approve: `${Config.RequestTokenUrl}request_token`,
       });
     });
 
